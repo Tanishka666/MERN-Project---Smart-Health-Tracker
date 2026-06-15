@@ -1,1 +1,1315 @@
+/* ===========================================================
+   GLOBAL PAGE WRAPPER
+   =========================================================== */
+.page-wrapper {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background: #e5e4e4;
+  transition: 0.3s ease;
+}
 
+.page-wrapper.dark {
+  background: #7eafe7;
+  color: #f0ebeb;
+}
+
+/* ===========================================================
+   SIDEBAR
+   =========================================================== */
+.sidebar {
+  width: 240px;
+  min-height: 100vh;
+  background: #1e293b;
+  color: white;
+  padding: 22px;
+  box-sizing: border-box;
+  position: fixed;
+  
+  transition: width 0.25s ease;
+}
+
+.sidebar.collapsed {
+  width: 80px;
+  padding-left: 2px;
+  
+}
+
+.sidebar h2 {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.sidebar .menu-item {
+  padding: 20px 14px;
+  margin: 8px 0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.sidebar .menu-item:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.sidebar .menu-item.active {
+  background: rgba(255, 255, 255, 0.23);
+}
+
+/* ===========================================================
+   MAIN CONTENT
+   =========================================================== */
+.content-area {
+  margin-left: 240px;
+  width: calc(100% - 240px);
+  padding: 20px;
+  transition: 0.25s ease;
+}
+
+.content-area.collapsed {
+  margin-left: 80px;
+  width: calc(100% - 80px);
+}
+
+/* ===========================================================
+   NAVBAR
+   =========================================================== */
+.navbar {
+  background: #2556a6;
+  padding: 14px 18px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 4px 16px rgba(0,0,0,0.06);
+  margin-top: 25px;
+}
+
+.page-wrapper.dark .navbar {
+  background: #2556a6;
+  color: #e2e8f0;
+}
+
+.dark-toggle-btn {
+  background: #199c5a;
+  color: white;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.logout-floating {
+  position: fixed;
+  top: 5px;
+  right: 10px;
+  z-index: 999;
+  padding: 10px 18px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.12);
+  transition: 0.2s ease;
+}
+
+.logout-floating:hover {
+  background: #2563eb;
+}
+
+
+/* .logout-btn {
+  background: rgb(54, 136, 163);
+  color: white;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+} */
+
+/* ===========================================================
+   PAGE SECTION
+   =========================================================== */
+.page-section h1 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.page-section p {
+  color: rgb(12, 8, 8);
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.page-wrapper.dark .page-section p {
+  color: #e2e8f0;        /* light grey/white */
+}
+
+
+/* ===========================================================
+   CARD
+   =========================================================== */
+.card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 14px;
+  margin-bottom: 25px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.06);
+
+}
+
+.page-wrapper.dark .card {
+  background: #1e293b;
+  color: #e2e8f0;
+}
+
+/* ===========================================================
+   CHART SECTION (STACK EVERYTHING VERTICALLY)
+   =========================================================== */
+
+.chart-section-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+/* ===========================================================
+   INPUT CARDS (ALWAYS ONE PER LINE)
+   =========================================================== */
+
+.chart-input-card {
+  width: 100%;
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.08);
+  box-sizing: border-box;
+}
+
+.chart-input-card label {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.chart-input-card input {
+  width: 100%;
+  padding: 11px ;
+  margin-top: 8px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+  
+}
+
+.chart-input-card input:focus {
+  border-color: #2563eb;
+}
+
+/* DARK MODE */
+.page-wrapper.dark .chart-input-card {
+  background: #1e293b;
+  color: #e2e8f0;
+}
+
+/* ===========================================================
+   CHART DISPLAY (STAYS BELOW, NO LAYOUT SHIFT)
+   =========================================================== */
+
+.chart-display-box {
+  width: 100%;
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+}
+
+.chart-display-box h3 {
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+/* DARK MODE */
+.page-wrapper.dark .chart-display-box {
+  background: 1E293B;
+  color: black;
+}
+
+/* ===========================================================
+   PREDICTION CARD
+   =========================================================== */
+
+.prediction-card {
+  width: 100%;
+  padding: 18px;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  border-left: 6px solid #2563eb;
+}
+
+.prediction-card p {
+  font-size: 15px;
+  margin: 6px 0;
+}
+
+.prediction-card.low {
+  border-left-color: #10b981;
+}
+
+.prediction-card.medium {
+  border-left-color: #f59e0b;
+}
+
+.prediction-card.high {
+  border-left-color: #ef4444;
+}
+
+/* DARK MODE */
+.page-wrapper.dark .prediction-card {
+  background: #1e293b;
+  color: #e2e8f0;
+}
+
+/* ===========================================================
+   BUTTON
+   =========================================================== */
+
+.dark-toggle-btn {
+  align-self: center;
+  margin-top: 10px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.dark-toggle-btn:hover {
+  background: #1d4ed8;
+}
+
+/* ===========================================================
+   SLEEP SECTION STYLES
+   =========================================================== */
+
+.sleep-card {
+  background: #ffffff;
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  margin-top: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.page-wrapper.dark .sleep-card {
+  background: #1e293b;
+  color: #e2e8f0;
+}
+
+/* ===========================================================
+   LABELS
+   =========================================================== */
+
+.sleep-card label {
+  font-weight: 600;
+  display: block;
+  margin-top: 16px;
+  font-size: 15px;
+}
+
+/* ===========================================================
+   INPUT + SELECT (FIXED ALIGNMENT)
+   =========================================================== */
+
+.sleep-card input,
+.sleep-card select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  margin-top: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+/* FOCUS */
+.sleep-card input:focus,
+.sleep-card select:focus {
+  border-color: #2563eb;
+}
+
+/* DARK MODE INPUTS */
+.page-wrapper.dark .sleep-card input,
+.page-wrapper.dark .sleep-card select {
+  background: #334155;
+  color: #ffffff;
+  border: 1px solid #475569;
+}
+
+/* ===========================================================
+   PREDICTION BOX
+   =========================================================== */
+
+.sleep-prediction-box {
+  background: #f1f5f9;
+  padding: 16px;
+  border-radius: 12px;
+  margin-top: 20px;
+  border-left: 5px solid #3b82f6;
+  
+}
+
+.page-wrapper.dark .sleep-prediction-box {
+  background: #334155;
+  border-left: 5px solid #60a5fa;
+}
+
+.sleep-prediction-box h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.sleep-prediction-box p {
+  font-size: 14px;
+}
+
+/* ===========================================================
+   SAVE BUTTON
+   =========================================================== */
+
+.sleep-card button {
+  margin-top: 20px;
+  width: auto;
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: none;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  display: block;
+  margin: 20px auto 0;
+}
+
+.sleep-card button:hover {
+  background: #1d4ed8;
+}
+
+/* ===========================================================
+   RISK COLORS
+   =========================================================== */
+
+.risk-low {
+  color: #10b981;
+  font-weight: 700;
+}
+
+.risk-medium {
+  color: #eab308;
+  font-weight: 700;
+}
+
+.risk-high {
+  color: #ef4444;
+  font-weight: 700;
+}
+
+/* ===========================================================
+   RESPONSIVE FIX
+   =========================================================== */
+
+@media (max-width: 768px) {
+  .sleep-card {
+    padding: 16px;
+  }
+}
+
+/* ===========================================================
+   STRESS SECTION STYLES
+   =========================================================== */
+
+.stress-card {
+  background: #ffffff;
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  margin-top: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.page-wrapper.dark .stress-card {
+  background: #1e293b;
+  color: #e2e8f0;
+}
+
+/* ===========================================================
+   LABELS
+   =========================================================== */
+
+.stress-card label {
+  font-weight: 600;
+  display: block;
+  margin-top: 16px;
+  font-size: 15px;
+}
+
+/* ===========================================================
+   INPUT + SELECT (FIXED ALIGNMENT)
+   =========================================================== */
+
+.stress-card input,
+.stress-card select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  margin-top: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+/* FOCUS */
+.stress-card input:focus,
+.stress-card select:focus {
+  border-color: #2563eb;
+}
+
+/* DARK MODE INPUTS */
+.page-wrapper.dark .stress-card input,
+.page-wrapper.dark .stress-card select {
+  background: #334155;
+  color: #ffffff;
+  border: 1px solid #475569;
+}
+
+/* ===========================================================
+   PREDICTION BOX
+   =========================================================== */
+
+.stress-prediction-box {
+  background: #f1f5f9;
+  padding: 16px;
+  border-radius: 12px;
+  margin-top: 20px;
+  border-left: 5px solid #ef4444;
+}
+
+.page-wrapper.dark .stress-prediction-box {
+  background: #334155;
+  border-left: 5px solid #f87171;
+}
+
+.stress-prediction-box h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.stress-prediction-box p {
+  font-size: 14px;
+}
+
+/* ===========================================================
+   BUTTON
+   =========================================================== */
+
+.stress-card button {
+  margin-top: 20px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+
+  width: auto;              /* small button */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;       /* centered */
+}
+
+.stress-card button:hover {
+  background: #1d4ed8;
+}
+
+/* ===========================================================
+   RISK COLORS
+   =========================================================== */
+
+.risk-low {
+  color: #10b981;
+  font-weight: 700;
+}
+
+.risk-medium {
+  color: #eab308;
+  font-weight: 700;
+}
+
+.risk-high {
+  color: #ef4444;
+  font-weight: 700;
+}
+
+/* ===========================================================
+   RESPONSIVE
+   =========================================================== */
+
+@media (max-width: 768px) {
+  .stress-card {
+    padding: 16px;
+  }
+}
+
+/* ===========================================================
+   STEPS SECTION STYLES
+   =========================================================== */
+
+.steps-card {
+  background: #ffffff;
+  padding: 22px;
+  border-radius: 14px;
+  margin-top: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.page-wrapper.dark .steps-card {
+  background: #1e293b;
+  color: #e2e8f0;
+}
+
+/* ===========================================================
+   LABELS
+   =========================================================== */
+
+.steps-card label {
+  font-weight: 600;
+  display: block;
+  margin-top: 16px;
+  font-size: 15px;
+}
+
+/* ===========================================================
+   INPUT + SELECT (FIXED ALIGNMENT)
+   =========================================================== */
+
+.steps-card input,
+.steps-card select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+/* FOCUS */
+.steps-card input:focus,
+.steps-card select:focus {
+  border-color: #2563eb;
+}
+
+/* DARK MODE INPUTS */
+.page-wrapper.dark .steps-card input,
+.page-wrapper.dark .steps-card select {
+  background: #334155;
+  color: #ffffff;
+  border: 1px solid #475569;
+}
+
+/* ===========================================================
+   VERTICAL BAR GRAPH
+   =========================================================== */
+
+.steps-bar-graph {
+  display: flex;
+  gap: 6px;
+  margin-top: 15px;
+  height: 120px;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.steps-bar-vertical {
+  width: 18px;
+  height: 100%;
+  background: #e2e8f0;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+.steps-bar-vertical.filled {
+  background: #3b82f6;
+  box-shadow: 0 0 6px rgba(59,130,246,0.5);
+  transform: scaleY(1.05);
+}
+
+.page-wrapper.dark .steps-bar-vertical {
+  background: #475569;
+}
+
+.page-wrapper.dark .steps-bar-vertical.filled {
+  background: #60a5fa;
+  box-shadow: 0 0 6px rgba(96,165,250,0.6);
+}
+
+/* ===========================================================
+   PREDICTION BOX
+   =========================================================== */
+
+.steps-prediction-box {
+  background: #f1f5f9;
+  padding: 16px;
+  border-radius: 12px;
+  margin-top: 20px;
+  border-left: 5px solid #3b82f6;
+}
+
+.page-wrapper.dark .steps-prediction-box {
+  background: #334155;
+  border-left: 5px solid #60a5fa;
+}
+
+.steps-prediction-box h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.steps-prediction-box p {
+  font-size: 14px;
+}
+
+/* ===========================================================
+   BUTTON (SMALL + CENTERED)
+   =========================================================== */
+
+.steps-card button {
+  margin-top: 20px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.steps-card button:hover {
+  background: #1d4ed8;
+}
+
+/* ===========================================================
+   RESPONSIVE
+   =========================================================== */
+
+@media (max-width: 768px) {
+  .steps-card {
+    padding: 16px;
+  }
+}
+
+/* ===========================================================
+   PROFILE SECTION STYLING
+   =========================================================== */
+
+.profile-card,
+.card {
+  background: #ffffff;
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
+  max-width: 450px;
+
+  /* ✅ CHANGE: center the profile box */
+  margin: 0 auto;
+
+  /* ✅ CHANGE: vertical alignment of inputs & button */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-wrapper.dark .profile-card,
+.page-wrapper.dark .card {
+  background: #1e293b;
+  color: #e2e8f0;
+}
+
+/* ================= TITLE ================= */
+.profile-card h2,
+.card h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-weight: 700;
+  color: #1e293b;
+
+  /* ✅ CHANGE: center title */
+  text-align: center;
+}
+
+.page-wrapper.dark .profile-card h2,
+.page-wrapper.dark .card h2 {
+  color: #e2e8f0;
+}
+
+/* ================= INPUTS ================= */
+.profile-card input,
+.card input {
+  /* ✅ CHANGE: full width and vertical alignment */
+  width: 80%;
+
+  padding: 12px;
+  margin: 10px 0;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.profile-card input:focus,
+.card input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 4px rgba(37, 99, 235, 0.4);
+}
+
+/* ================= BUTTON ================= */
+.profile-card button,
+.card button {
+  /* ✅ CHANGE: align button vertically with inputs */
+  width: 100%;
+
+  padding: 12px;
+  background: #2563eb;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  margin-top: 14px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.profile-card button:hover,
+.card button:hover {
+  background: #1e40af;
+}
+
+/* ================= SAVED PROFILE ================= */
+.saved-profile-box {
+  margin-top: 20px;
+  padding: 14px;
+  border-left: 4px solid #2563eb;
+
+  /* ✅ CHANGE: align saved data nicely */
+  width: 100%;
+}
+
+.saved-profile-box p {
+  margin: 6px 0;
+  font-size: 15px;
+}
+
+/* ================= DARK MODE ================= */
+.page-wrapper.dark .saved-profile-box {
+  border-left-color: #60a5fa;
+}
+
+/* =====================================================
+   SMOOTH ENTRANCE ANIMATION – PROFILE CARD
+   ===================================================== */
+
+/* Initial animation state */
+.profile-card,
+.card {
+  opacity: 0;
+  transform: translateY(30px) scale(0.97);
+  filter: blur(6px);
+  animation: profileFadeIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Animation keyframes */
+@keyframes profileFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+
+
+/* ================= LANDING PAGE ================= */
+
+
+/* ROOT WRAPPER */
+.landing-root {
+  background: linear-gradient(180deg, #f4f8ff 0%, #ffffff 40%, #f6f9ff 100%);
+  color: #0f172a;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* NAVBAR */
+.landing-root .landing-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  backdrop-filter: blur(14px);
+  background: rgba(244, 248, 255, 0.75);
+  border-bottom: 1px solid #dbeafe;
+  z-index: 100;
+}
+
+.landing-root .nav-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 18px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.landing-root .brand {
+  font-weight: 600;
+  font-size: 18px;
+  color: #113dcb;
+}
+
+.landing-root .nav-btn {
+  background: white;
+  border: 1px solid #bfdbfe;
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  color: #1d4ed8;
+}
+
+/* HERO */
+.landing-root .hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding-top: 0px;
+}
+
+.landing-root .hero-content {
+  max-width: 720px;
+  text-align: center;
+  z-index: 2;
+}
+
+.landing-root .hero-content h1 {
+  font-size: 58px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  background: linear-gradient(90deg, #1e3a8a, #2563eb, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.landing-root .hero-content p {
+  font-size: 18px;
+  color: #475569;
+  margin-bottom: 36px;
+}
+
+/* BUTTON */
+.landing-root .primary-btn {
+  background: linear-gradient(135deg, #2563eb, #38bdf8);
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 30px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* FEATURES */
+.landing-root .features-section {
+  padding: 100px 24px;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+  padding-top: 0px;
+}
+
+.landing-root .features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+}
+
+.landing-root .feature-card {
+  background: linear-gradient(180deg, #948d8d, #f0f6ff);
+  padding: 32px;
+  border-radius: 22px;
+}
+
+/* INSIGHT */
+.landing-root .insight-section {
+  padding: 120px 24px;
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  color: white;
+  text-align: center;
+}
+
+/* CTA */
+.landing-root .cta-section {
+  padding: 120px 24px;
+  text-align: center;
+}
+
+/* FOOTER */
+.landing-root .landing-footer {
+  padding: 30px;
+  text-align: center;
+  color: #64748b;
+}
+
+
+/* ================= SAFETY ================= */
+.page-wrapper {
+  overflow-x: hidden;
+}
+
+/* ================= WEEKLY SUMMARY ================= */
+
+.weekly-summary-container {
+  width: 95%;
+}
+
+.summary-card {
+  background: #ffffff;
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  width: 100%;
+  margin-bottom: 24px;
+  overflow-x: hidden;
+}
+
+.page-wrapper.dark .summary-card {
+  background: #1e293b;
+  color: #e2e8f0;
+}
+
+.weekly-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.weekly-subtitle {
+  color: #64748b;
+  margin-bottom: 24px;
+}
+
+/* ================= CHART ================= */
+
+.weekly-chart-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.weekly-chart-container {
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+  min-width: max-content;
+  padding-bottom: 10px;
+}
+
+.weekly-bar-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 40px;
+  font-size: 13px;
+}
+
+.bar {
+  width: 30px;
+  border-radius: 8px;
+}
+
+.day {
+  margin-top: 6px;
+  color: #475569;
+}
+
+.value {
+  font-weight: 600;
+}
+
+.empty-text {
+  color: #94a3b8;
+  font-size: 14px;
+  padding: 10px 0;
+}
+
+/* ================= COLORS ================= */
+.bar-red { background: #ef4444; }
+.bar-blue { background: #3b82f6; }
+.bar-orange { background: #f97316; }
+.bar-green { background: #10b981; }
+.bar-yellow { background: #eab308; }
+.bar-purple { background: #8b5cf6; }
+.bar-cyan { background: #06b6d4; }
+
+
+/* ================= GLOBAL RESET ================= */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* ================= HOME SECTION ================= */
+.home-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 25px 15px;
+}
+
+/* ================= HEADER ================= */
+.dashboard-header {
+  margin-bottom: 25px;
+}
+
+.dashboard-header h1 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.dashboard-header p {
+  color: #1e232b;
+  margin-top: 4px;
+}
+
+/* ================= SUMMARY ================= */
+.summary-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.summary-card {
+  background: #ffffff;
+  padding: 5px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.summary-card h4 {
+  font-size: 15px;
+  color: #0c0e12;
+  margin-bottom: 6px;
+}
+
+.summary-card p {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+/* ================= VISUAL GRID ================= */
+.charts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  align-items: start; 
+  
+}
+
+
+.chart-card {
+  background: #ffffff;
+  padding: 12px 14px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: 0.2s ease;
+
+  display: inline-flex;        /* ✅ key change */
+  flex-direction: column;
+  align-items: center;
+
+  height: fit-content;         /* ✅ makes card shrink to content */
+}
+
+
+
+.chart-card:hover {
+  transform: translateY(-4px);
+}
+
+.chart-card h3 {
+  font-size: 15px;
+  margin: 0 0 12px 0;
+  color: #1f2937;
+  padding-top: 0;
+}
+
+/* ================= HEART CHART ================= */
+.recharts-wrapper {
+  font-size: 12px;
+}
+
+/* ================= STEPS RING ================= */
+.circle-progress {
+  position: relative;
+  width: 110px;
+  padding: 0px;
+  margin: 4px 0;
+  
+}
+
+.circle-progress svg {
+  transform: rotate(-90deg);
+ 
+}
+
+.circle-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 600;
+  font-size: 14px;
+  color: #1f2937;
+}
+
+.circle-text span {
+  display: block;
+  font-size: 11px;
+  color: #64748b;
+}
+
+/* ================= SLEEP TIMELINE ================= */
+.sleep-timeline {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.sleep-block {
+  width: 12px;
+  height: 45px;
+  background: #3b82f6;
+  border-radius: 4px;
+}
+
+/* ================= STRESS GAUGE ================= */
+.semi-gauge {
+  position: relative;
+  width: 140px;
+  margin: auto;
+
+}
+
+.semi-gauge svg {
+  width: 100%;
+  height: auto;
+}
+
+.gauge-text {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 600;
+  font-size: 15px;
+  color: #1f2937;
+}
+
+/* ================= DARK MODE ================= */
+
+.dark .home-section {
+  background: #0f172a;
+}
+
+/* Cards */
+.dark .summary-card,
+.dark .chart-card {
+  background: #1e293b;
+}
+
+/* Text */
+.dark .dashboard-header h1,
+.dark .chart-card h3,
+.dark .circle-text,
+.dark .gauge-text {
+  color: #e2e8f0;
+}
+
+.dark .dashboard-header p,
+.dark .summary-card h4,
+.dark .circle-text span {
+  color: #cbd5f5;
+}
+
+.dark .summary-card p {
+  color: #38bdf8;
+}
+
+/* SVG BACKGROUND FIX */
+.dark .chart-card svg circle:first-child {
+  stroke: #334155;
+}
+
+/* STEPS RING COLOR */
+.dark .circle-progress circle:last-child {
+  stroke: #22c55e;
+}
+
+/* SLEEP BLOCK */
+.dark .sleep-block {
+  background: #60a5fa;
+}
+
+/* STRESS GAUGE BASE */
+.dark .semi-gauge path:first-child {
+  stroke: #334155;
+}
