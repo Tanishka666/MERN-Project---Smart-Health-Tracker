@@ -180,5 +180,5 @@ Ensure MongoDB is installed and running locally before starting the backend serv
 
 **Tanishka Gandhi**
 
-Third Year B.Tech Student
-Data Science & Full Stack Development Enthusiast
+*Third Year B.Tech Student
+*Data Science & Full Stack Development Enthusiast
