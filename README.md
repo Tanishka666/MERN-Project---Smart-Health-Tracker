@@ -74,11 +74,11 @@ The application provides a centralized health monitoring system with secure user
 * CSS3
 
 ### Backend
-Node.js
-Express.js
+* Node.js
+* Express.js
 
 ### Database
-MongoDB
+* MongoDB
 
 ### APIs
 * RESTful APIs
